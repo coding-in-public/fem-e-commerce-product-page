@@ -1,0 +1,287 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+/*
+  3. Allow percentage-based heights in the application
+*/
+html, body {
+  height: 100%;
+}
+/*
+  Typographic tweaks!
+  4. Add accessible line-height
+  5. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+/*
+  6. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+/*
+  7. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+button {
+  border: none;
+  background: none;
+}
+/*
+  8. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+/*
+  9. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+:root {
+  --base: 1rem;
+  /* SPACING SIZES 1.26, 1.875, 2.25, 2.5. 2.8125*/
+  --sizer-1: calc((var(--base) * 1.26));
+  --sizer-2: calc((var(--base) * 1.875));
+  --sizer-3: calc((var(--base) * 2.25));
+  --sizer-4: calc((var(--base) * 2.5));
+  --sizer-5: calc((var(--base) * 2.8125));
+  /* FONT SIZES */
+  --fs-1: calc((var(--base) * .8));
+  --fs-2: ((--base));
+  --fs-3: calc((var(--base) * 1.75));
+  --fs-4: calc((var(--base) * 2.25));
+
+  /* COLORS */
+  --bkg: hsl(25, 100%, 99%);
+  --accent: hsl(26, 100%, 55%);
+  --accent-pale: hsl(25, 100%, 94%);
+  --text: hsl(25, 100%, 3%);
+  --text-opacity: hsl(25, 100%, 3%, .75);
+  --alt-bkg: hsl(220, 13%, 13%);
+  --alt-bkg1: hsl(219, 9%, 45%);
+  --alt-bkg2: hsl(220, 14%, 75%);
+  --alt-bkg3: hsl(223, 64%, 98%);
+
+  /* MISC */
+  --radius: .8rem;
+}
+
+/* utility classes */
+
+/* FONTS */
+.fs-1 {
+  font-size: var(--fs-1);
+}
+.fs-2 {
+  font-size: var(--fs-2);
+}
+.fs-3 {
+  font-size: var(--fs-3);
+}
+.fs-4 {
+  font-size: var(--fs-4);
+}
+
+.uppercase {
+  text-transform: uppercase;
+}
+
+.font-bold {
+  font-weight: bold;
+}
+
+h1, .h1 {
+  line-height: 1.1;
+}
+
+h2, .h2 {
+  line-height: 1.1;
+}
+
+/* SPACING */
+.sizer-1 {
+  font-size: var(--sizer-1);
+}
+.sizer-2 {
+  font-size: var(--sizer-2);
+}
+.sizer-3 {
+  font-size: var(--sizer-3);
+}
+.sizer-4 {
+  font-size: var(--sizer-4);
+}
+.sizer-5 {
+  font-size: var(--sizer-5);
+}
+
+.gap-base {
+  gap: var(--base);
+}
+
+.gap-1 {
+  gap: var(--sizer-1);
+}
+.gap-2 {
+  gap: var(--sizer-2);
+}
+.gap-3 {
+  gap: var(--sizer-3);
+}
+.gap-4 {
+  gap: var(--sizer-4);
+}
+.gap-5 {
+  gap: var(--sizer-5);
+}
+
+
+/* COLORS */
+.bg-bkg {
+  background-color: var(--bkg);
+}
+.bg-accent {
+  background-color: var(--accent);
+}
+.bg-accent-pale {
+  background-color: var(--accent-pale);
+}
+.bg-text {
+  background-color: var(--text);
+}
+.bg-text-opacity {
+  background-color: var(--text-opacity);
+}
+.bg-alt-bkg {
+  background-color: var(--alt-bkg);
+}
+.bg-alt-bkg1 {
+  background-color: var(--alt-bkg1);
+}
+.bg-alt-bkg2 {
+  background-color: var(--alt-bkg2);
+}
+.bg-alt-bkg3 {
+  background-color: var(--alt-bkg3);
+}
+.bkg {
+  color: var(--bkg);
+}
+
+.accent {
+  color: var(--accent);
+}
+.accent-pale {
+  color: var(--accent-pale);
+}
+.text {
+  color: var(--text);
+}
+.text-opacity {
+  color: var(--text-opacity);
+}
+.alt-bkg {
+  color: var(--alt-bkg);
+}
+.alt-bkg1 {
+  color: var(--alt-bkg1);
+}
+.alt-bkg2 {
+  color: var(--alt-bkg2);
+}
+.alt-bkg3 {
+  color: var(--alt-bkg3);
+}
+
+/* LAYOUT */
+.grid {
+  display: grid;
+}
+
+.flex {
+  display: flex;
+}
+
+/* MISC */
+
+.rounded {
+  border-radius: var(--radius);
+}
+
+body {
+  font-family: 'Kumbh Sans', sans-serif;
+}
+
+/* PRODUCT SECTION */
+
+.product {
+  padding: var(--sizer-1);
+}
+
+.product__price {
+  justify-content: space-between;
+  align-items: center;
+}
+
+.product__price--actual{
+  align-items: center;
+}
+
+.price--discount {
+  padding: 2px 5px;
+  border-radius: 5px;
+}
+
+.price--original {
+  text-decoration: line-through;
+}
+/* CHECKOUT SECTION */
+.checkout {
+  flex-wrap: wrap;
+}
+
+.checkout__amt {
+  flex: 100%;
+}
+
+.checkout__btn {
+  flex: 100%;
+  justify-content: center;
+  align-items: center;
+  padding: calc(var(--sizer-1) * .5) var(--sizer-1);
+}
+
+.checkout__amtBtn {
+  width: 100%;
+  justify-content: space-between;
+  align-items: center;
+  padding: calc(var(--sizer-1) * .2) var(--sizer-1);
+}
+
+.amt {
+   padding: calc(var(--sizer-1) * .5);
+   height: var(--sizer-3);
+   width: var(--sizer-3);
+   place-items: center;
+}
