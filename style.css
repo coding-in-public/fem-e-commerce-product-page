@@ -75,6 +75,7 @@ p, h1, h2, h3, h4, h5, h6 {
   /* COLORS */
   --bkg: hsl(25, 100%, 99%);
   --accent: hsl(26, 100%, 55%);
+  --accent-semi-transparent: hsl(26, 100%, 55%, .4);
   --accent-pale: hsl(25, 100%, 94%);
   --text: hsl(25, 100%, 3%);
   --text-opacity: hsl(25, 100%, 3%, .75);
@@ -229,8 +230,62 @@ h2, .h2 {
   border-radius: var(--radius);
 }
 
+.hidden {
+  display: none;
+}
+
 body {
   font-family: 'Kumbh Sans', sans-serif;
+}
+
+/* SLIDER SECTION */
+
+.slider-container {
+  overflow: hidden;
+  width: 100%;
+  position: relative;
+}
+
+.btn {
+  position:absolute;
+  z-index: 5;
+  top: 50%;
+  background-color: var(--bkg);
+  height: var(--sizer-3);
+  width: var(--sizer-3);
+  border-radius: 50%;
+  display: grid;
+  place-items: center;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+
+.btn--left {
+  left: var(--sizer-1);
+}
+
+.btn--left svg {
+  margin-right: 4px;;
+}
+
+.btn--right {
+  right: var(--sizer-1);
+}
+
+.btn--right svg {
+  margin-left: 4px;
+}
+
+.slider {
+  width: 100%;
+  height: 100%;
+}
+
+.slide {
+  flex: 1;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 /* PRODUCT SECTION */
@@ -270,6 +325,7 @@ body {
   justify-content: center;
   align-items: center;
   padding: calc(var(--sizer-1) * .5) var(--sizer-1);
+  box-shadow: 0px 10px 25px var(--accent-semi-transparent);
 }
 
 .checkout__amtBtn {

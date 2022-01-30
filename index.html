@@ -9,32 +9,50 @@
   <!-- displays site properly based on user's device -->
 
   <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  <script src="./slider.js" type="module"></script>
   <link rel="stylesheet" href="style.css">
-  <style>
-    .attribution {
-      font-size: 11px;
-      text-align: center;
-    }
-
-    .attribution a {
-      color: hsl(228, 45%, 44%);
-    }
-  </style>
 </head>
 
 <body>
 
+  <nav>
+    <button aria-expanded="false" aria-label="Open Mobile Menu">
+
+    </button>
+  </nav>
+
   <main>
-    <div class="product">
+    <section class="slider-container">
+      <button id="prev" class="btn btn--left">
+        <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg">
+          <path d="M11 1 3 9l8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
+        </svg>
+      </button>
+      <button id="next" class="btn btn--right"><svg width="13" height="18" xmlns="http://www.w3.org/2000/svg">
+          <path d="m2 1 8 8-8 8" stroke="#1D2026" stroke-width="3" fill="none" fill-rule="evenodd" />
+        </svg></button>
+      <div class="slider flex">
+        <img class="slide slide1" src="/images/image-product-1.jpg" alt="Shoes">
+        <img class="slide slide2" src="/images/image-product-2.jpg" alt="Shoes">
+        <img class="slide slide3" src="/images/image-product-3.jpg" alt="Shoes">
+        <img class="slide slide4" src="/images/image-product-4.jpg" alt="Shoes">
+      </div>
+      <!-- IMAGE small -->
+      <!-- IMAGE small -->
+      <!-- IMAGE small -->
+      <!-- IMAGE small -->
+    </section>
+    <section class="product">
       <div class="product__content grid gap-1">
         <div class="product__description grid gap-base">
           <p class="accent fs-1 uppercase font-bold">
             Sneaker Company
           </p>
           <h1 class="font-bold fs-4">
-          Fall Limited Edition Sneakers
+            Fall Limited Edition Sneakers
           </h1>
-          <p class="alt-bkg1">These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.</p>
+          <p class="alt-bkg1">These low-profile sneakers are your perfect casual wear companion. Featuring a durable
+            rubber outer sole, they’ll withstand everything the weather can offer.</p>
         </div>
         <div class="product__price flex">
           <div class="product__price--actual flex gap-1">
@@ -46,23 +64,25 @@
         <section class="checkout flex gap-1">
           <div class="checkout__amt flex">
             <div class="checkout__amtBtn flex bg-alt-bkg3 rounded">
-              <button id="amt--decrease"  class="amt grid" aria-label="Decrease quantity"><svg width="12" height="4" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs>
-                  <path
-                    d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
-                    id="a" />
-                </defs>
-                <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
-              </svg></button>
+              <button id="amt--decrease" class="amt grid" aria-label="Decrease quantity"><svg width="12" height="4"
+                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs>
+                    <path
+                      d="M11.357 3.332A.641.641 0 0 0 12 2.69V.643A.641.641 0 0 0 11.357 0H.643A.641.641 0 0 0 0 .643v2.046c0 .357.287.643.643.643h10.714Z"
+                      id="a" />
+                  </defs>
+                  <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#a" />
+                </svg></button>
               <span id="qty" class="font-bold fs-2" aria-label="Current Quantity">0</span>
-              <button id="amt--increase"  class="amt grid" aria-label="Increase quantity"><svg width="12" height="12" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
-                <defs>
-                  <path
-                    d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
-                    id="b" />
-                </defs>
-                <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
-              </svg></button>
+              <button id="amt--increase" class="amt grid" aria-label="Increase quantity"><svg width="12" height="12"
+                  xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                  <defs>
+                    <path
+                      d="M12 7.023V4.977a.641.641 0 0 0-.643-.643h-3.69V.643A.641.641 0 0 0 7.022 0H4.977a.641.641 0 0 0-.643.643v3.69H.643A.641.641 0 0 0 0 4.978v2.046c0 .356.287.643.643.643h3.69v3.691c0 .356.288.643.644.643h2.046a.641.641 0 0 0 .643-.643v-3.69h3.691A.641.641 0 0 0 12 7.022Z"
+                      id="b" />
+                  </defs>
+                  <use fill="#FF7E1B" fill-rule="nonzero" xlink:href="#b" />
+                </svg></button>
             </div>
           </div>
           <button id="checkout" class="rounded accent-pale checkout__btn flex gap-1 bg-accent">
@@ -75,28 +95,28 @@
           </button>
         </section>
       </div>
-  </div>
+    </section>
 
 
 
-  Collections
-  Men
-  Women
-  About
-  Contact
+    Collections
+    Men
+    Women
+    About
+    Contact
 
 
 
-  
 
-  $125.00
-  50%
-  $250.00
 
-  0
-  Add to cart
-  
-</main>
+    $125.00
+    50%
+    $250.00
+
+    0
+    Add to cart
+
+  </main>
 
   <div class="attribution">
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
