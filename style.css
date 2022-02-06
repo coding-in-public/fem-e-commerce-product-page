@@ -238,6 +238,55 @@ body {
   font-family: 'Kumbh Sans', sans-serif;
 }
 
+/* NAV SECTION */
+nav {
+  display: flex;
+  justify-items: center;
+  justify-content: space-between;
+  padding: var(--sizer-1);
+}
+
+.nav--section {
+  gap: 10px;
+}
+
+.account {
+  width: var(--sizer-1);
+}
+
+.nav__panel-container {
+  background-color: hsl(0, 0%, 3%, .6);
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  transform: translateX(-100%);
+}
+
+.nav__panel-container.expanded {
+  transform: translateX(0%)
+}
+
+
+.nav__panel {
+  background-color: var(--bkg);
+  width: 60%;
+  height: 100%;
+  padding: var(--sizer-1);
+}
+
+.nav__link-container {
+  list-style: none;
+  padding: 0;
+  display: grid;
+}
+
+.nav__link a {
+  text-decoration: none;
+  font-weight: bold;
+  color: var(--text);
+}
+
+
 /* SLIDER SECTION */
 
 .slider-container {
