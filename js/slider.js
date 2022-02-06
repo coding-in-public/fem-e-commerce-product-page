@@ -6,13 +6,8 @@ let currentIndex = 0;
 
 function moveSlider(dir){
   // const width = sliderContainer.clientWidth;
-  if(dir === 'next'){
-    currentIndex++;
-    slider.style.transform = `translateX(-${100 * currentIndex}%)`;
-  } else {
-    currentIndex --;
-    slider.style.transform = `translateX(${100 * currentIndex}%)`;
-  }
+  dir === 'next' ? currentIndex++ : currentIndex --;
+  slider.style.transform = `translateX(-${100 * currentIndex}%)`;
   switch (currentIndex){
     case 0: 
       document.querySelector('#prev').classList.add('hidden');
@@ -27,7 +22,6 @@ function moveSlider(dir){
 }
 
 function handleBtnClick(e){
-  console.log(e.currentTarget.id);
   e.currentTarget.id === "next" ? moveSlider('next') : moveSlider('prev');
 }
 

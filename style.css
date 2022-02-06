@@ -1,9 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap");
 
 /*
   1. Use a more-intuitive box-sizing model.
 */
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 /*
@@ -15,7 +17,8 @@
 /*
   3. Allow percentage-based heights in the application
 */
-html, body {
+html,
+body {
   height: 100%;
 }
 /*
@@ -30,14 +33,21 @@ body {
 /*
   6. Improve media defaults
 */
-img, picture, video, canvas, svg {
+img,
+picture,
+video,
+canvas,
+svg {
   display: block;
   max-width: 100%;
 }
 /*
   7. Remove built-in form typography styles
 */
-input, button, textarea, select {
+input,
+button,
+textarea,
+select {
   font: inherit;
 }
 
@@ -48,14 +58,25 @@ button {
 /*
   8. Avoid text overflows
 */
-p, h1, h2, h3, h4, h5, h6 {
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   overflow-wrap: break-word;
 }
 /*
   9. Create a root stacking context
 */
-#root, #__next {
+#root,
+#__next {
   isolation: isolate;
+}
+
+button {
+  cursor: pointer;
 }
 
 :root {
@@ -67,7 +88,7 @@ p, h1, h2, h3, h4, h5, h6 {
   --sizer-4: calc((var(--base) * 2.5));
   --sizer-5: calc((var(--base) * 2.8125));
   /* FONT SIZES */
-  --fs-1: calc((var(--base) * .8));
+  --fs-1: calc((var(--base) * 0.8));
   --fs-2: ((--base));
   --fs-3: calc((var(--base) * 1.75));
   --fs-4: calc((var(--base) * 2.25));
@@ -75,20 +96,24 @@ p, h1, h2, h3, h4, h5, h6 {
   /* COLORS */
   --bkg: hsl(25, 100%, 99%);
   --accent: hsl(26, 100%, 55%);
-  --accent-semi-transparent: hsl(26, 100%, 55%, .4);
+  --accent-semi-transparent: hsl(26, 100%, 55%, 0.4);
   --accent-pale: hsl(25, 100%, 94%);
   --text: hsl(25, 100%, 3%);
-  --text-opacity: hsl(25, 100%, 3%, .75);
+  --text-opacity: hsl(25, 100%, 3%, 0.75);
   --alt-bkg: hsl(220, 13%, 13%);
   --alt-bkg1: hsl(219, 9%, 45%);
   --alt-bkg2: hsl(220, 14%, 75%);
   --alt-bkg3: hsl(223, 64%, 98%);
 
   /* MISC */
-  --radius: .8rem;
+  --radius: 0.8rem;
 }
 
 /* utility classes */
+
+svg {
+  pointer-events: none;
+}
 
 /* FONTS */
 .fs-1 {
@@ -112,11 +137,13 @@ p, h1, h2, h3, h4, h5, h6 {
   font-weight: bold;
 }
 
-h1, .h1 {
+h1,
+.h1 {
   line-height: 1.1;
 }
 
-h2, .h2 {
+h2,
+.h2 {
   line-height: 1.1;
 }
 
@@ -156,7 +183,6 @@ h2, .h2 {
 .gap-5 {
   gap: var(--sizer-5);
 }
-
 
 /* COLORS */
 .bg-bkg {
@@ -235,7 +261,7 @@ h2, .h2 {
 }
 
 body {
-  font-family: 'Kumbh Sans', sans-serif;
+  font-family: "Kumbh Sans", sans-serif;
 }
 
 /* NAV SECTION */
@@ -244,6 +270,10 @@ nav {
   justify-items: center;
   justify-content: space-between;
   padding: var(--sizer-1);
+  background-color: var(--bkg);
+  width: 100%;
+  position: fixed;
+  z-index: 8;
 }
 
 .nav--section {
@@ -255,7 +285,7 @@ nav {
 }
 
 .nav__panel-container {
-  background-color: hsl(0, 0%, 3%, .6);
+  background-color: hsl(0, 0%, 3%, 0.6);
   position: fixed;
   inset: 0;
   z-index: 10;
@@ -263,9 +293,8 @@ nav {
 }
 
 .nav__panel-container.expanded {
-  transform: translateX(0%)
+  transform: translateX(0%);
 }
-
 
 .nav__panel {
   background-color: var(--bkg);
@@ -286,7 +315,6 @@ nav {
   color: var(--text);
 }
 
-
 /* SLIDER SECTION */
 
 .slider-container {
@@ -296,7 +324,7 @@ nav {
 }
 
 .btn {
-  position:absolute;
+  position: absolute;
   z-index: 5;
   top: 50%;
   background-color: var(--bkg);
@@ -309,12 +337,16 @@ nav {
   cursor: pointer;
 }
 
+.btn.hidden {
+  display: none;
+}
+
 .btn--left {
   left: var(--sizer-1);
 }
 
 .btn--left svg {
-  margin-right: 4px;;
+  margin-right: 4px;
 }
 
 .btn--right {
@@ -348,7 +380,7 @@ nav {
   align-items: center;
 }
 
-.product__price--actual{
+.product__price--actual {
   align-items: center;
 }
 
@@ -373,7 +405,7 @@ nav {
   flex: 100%;
   justify-content: center;
   align-items: center;
-  padding: calc(var(--sizer-1) * .5) var(--sizer-1);
+  padding: calc(var(--sizer-1) * 0.5) var(--sizer-1);
   box-shadow: 0px 10px 25px var(--accent-semi-transparent);
 }
 
@@ -381,12 +413,86 @@ nav {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: calc(var(--sizer-1) * .2) var(--sizer-1);
+  padding: calc(var(--sizer-1) * 0.2) var(--sizer-1);
 }
 
 .amt {
-   padding: calc(var(--sizer-1) * .5);
-   height: var(--sizer-3);
-   width: var(--sizer-3);
-   place-items: center;
+  padding: calc(var(--sizer-1) * 0.5);
+  height: var(--sizer-3);
+  width: var(--sizer-3);
+  place-items: center;
+}
+
+.amt[disabled] {
+  cursor: not-allowed;
+}
+
+.cart-container {
+  position: fixed;
+  inset: 0;
+  z-index: 6;
+  padding: calc(var(--sizer-1) * 0.5);
+  display: flex;
+  justify-content: end;
+  align-items: start;
+}
+
+.cart-container[disabled] {
+  transform: translateY(-100%);
+}
+
+.cart {
+  background-color: var(--bkg);
+  position: relative;
+  top: calc(var(--sizer-5) + var(--sizer-1));
+  box-shadow: 0px 10px 25px hsl(25, 100%, 3%, 0.25);
+  width: 100%;
+  max-width: 356px;
+}
+
+.cart__header {
+  padding: var(--sizer-1);
+  border-bottom: 1px solid var(--alt-bkg2);
+}
+
+.cart__body {
+  padding: var(--sizer-1);
+  place-items: center;
+}
+
+.cart__body--content {
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.cart__body--content-description {
+  align-items: center;
+}
+
+.cart__img {
+  width: calc(var(--sizer-5) * 1.2);
+  height: calc(var(--sizer-5) * 1.2);
+  object-fit: cover;
+  border-radius: 5px;
+}
+
+.product--name {
+  max-width: 17ch;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.product--amt {
+  gap: 5px;
+}
+
+#total {
+  margin-left: 10px;
+}
+
+.cart__body--btn {
+  padding: var(--sizer-1);
+  width: 100%;
 }
