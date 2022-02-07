@@ -13,6 +13,7 @@
 */
 * {
   margin: 0;
+  padding: 0; /* fixed button oddities on safari mobile */
 }
 /*
   3. Allow percentage-based heights in the application
@@ -346,8 +347,9 @@ nav {
   z-index: 5;
   top: 50%;
   background-color: var(--bkg);
-  height: var(--sizer-3);
-  width: var(--sizer-3);
+  /* height: var(--sizer-3);
+  width: var(--sizer-3); */
+  aspect-ratio: 1/1;
   border-radius: 50%;
   display: grid;
   place-items: center;
