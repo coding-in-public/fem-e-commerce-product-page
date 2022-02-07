@@ -13,7 +13,7 @@
 */
 * {
   margin: 0;
-  /* padding: 0; fixed button oddities on safari mobile */
+  padding: 0; /* fixed button oddities on safari mobile */
 }
 /*
   3. Allow percentage-based heights in the application
