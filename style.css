@@ -282,7 +282,11 @@ nav {
 }
 
 .nav--section {
-  gap: 10px;
+  gap: var(--sizer-1);
+}
+
+.logo {
+  height: 24px;
 }
 
 .cartBtn {
@@ -347,8 +351,8 @@ nav {
   z-index: 5;
   top: 50%;
   background-color: var(--bkg);
-  /* height: var(--sizer-3);
-  width: var(--sizer-3); */
+  height: var(--sizer-3);
+  width: var(--sizer-3);
   aspect-ratio: 1/1;
   border-radius: 50%;
   display: grid;
@@ -365,7 +369,7 @@ nav {
   left: var(--sizer-1);
 }
 
-.btn--left img {
+.btn--left svg {
   margin-right: 4px;
   pointer-events: none;
 }
@@ -374,7 +378,7 @@ nav {
   right: var(--sizer-1);
 }
 
-.btn--right img {
+.btn--right svg {
   margin-left: 4px;
   pointer-events: none;
 }
