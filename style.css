@@ -264,6 +264,10 @@ body {
   font-family: "Kumbh Sans", sans-serif;
 }
 
+main {
+  padding-top: calc(var(--sizer-5) + var(--sizer-1));
+}
+
 /* NAV SECTION */
 nav {
   display: flex;
@@ -278,6 +282,18 @@ nav {
 
 .nav--section {
   gap: 10px;
+}
+
+.cartBtn {
+  position: relative;
+}
+
+.cartIndicator {
+  font-size: 0.7rem;
+  position: absolute;
+  line-height: 1;
+  padding: 0.1rem 0.4rem;
+  top: -0.4rem;
 }
 
 .account {
@@ -405,7 +421,7 @@ nav {
   flex: 100%;
   justify-content: center;
   align-items: center;
-  padding: calc(var(--sizer-1) * 0.5) var(--sizer-1);
+  padding: var(--sizer-1);
   box-shadow: 0px 10px 25px var(--accent-semi-transparent);
 }
 
@@ -413,7 +429,7 @@ nav {
   width: 100%;
   justify-content: space-between;
   align-items: center;
-  padding: calc(var(--sizer-1) * 0.2) var(--sizer-1);
+  padding: calc(var(--sizer-1) * 0.7) var(--sizer-1);
 }
 
 .amt {
