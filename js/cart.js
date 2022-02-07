@@ -5,6 +5,7 @@ const cartBtn = document.querySelector('#cartBtn');
 const trashBtn = document.querySelector('#trash');
 const cartBody = document.querySelector('#cart__body');
 const checkoutBtn = document.querySelector('#checkout');
+const cartIndicator = document.querySelector('#cartIndicator');
 let amt = 0;
 
 const checkoutState = {
@@ -50,16 +51,20 @@ function toggleCart(){
     : cartPanel.removeAttribute('disabled')
 }
 
-function updateCartState(num){
-  if(num === 0){
+function updateCartState(){
+  if(amt === 0){
     cartBody.innerHTML = checkoutState.default;
+    cartIndicator.textContent = null;
+    cartIndicator.classList.remove('active');
   } else {
     cartBody.innerHTML = checkoutState.items;
     const PRICE = 125;
-    const amt = document.querySelector('#amt');
-    const total = document.querySelector('#total');
-    amt.textContent = num;
-    total.textContent = `$${num * PRICE}.00`;
+    const productAmt = document.querySelector('#amt');
+    const productTotal = document.querySelector('#total');
+    productAmt.textContent = amt;
+    cartIndicator.textContent = amt;
+    cartIndicator.classList.add('active');
+    productTotal.textContent = `$${amt * PRICE}.00`;
   }
 }
 
@@ -75,7 +80,6 @@ function handleAmtBtnClick(e){
   } else {
     e.currentTarget.removeAttribute('disabled');
   }
-  updateCartState(amt);
 }
 //TODO: FIGURE OUT REMOVING DISABLED
 
@@ -83,9 +87,15 @@ amtBtns.forEach(b => b.addEventListener('click', handleAmtBtnClick));
 
 cartBtn.addEventListener('click', toggleCart);
 
-checkoutBtn.addEventListener('click', toggleCart);
+checkoutBtn.addEventListener('click', () => {
+  amt = Number(qty.textContent);
+  updateCartState();
+});
 
 cartPanel.addEventListener('click', (e) => {
   e.currentTarget === e.target && toggleCart();
-  e.target === document.querySelector('#trash') && updateCartState(0);
+  if(e.target === document.querySelector('#trash')){
+    amt = 0;
+    updateCartState();
+  }
 });

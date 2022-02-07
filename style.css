@@ -289,11 +289,13 @@ nav {
 }
 
 .cartIndicator {
-  font-size: 0.7rem;
+  font-size: 0.6rem;
   position: absolute;
-  line-height: 1;
-  padding: 0.1rem 0.4rem;
   top: -0.4rem;
+}
+
+.cartIndicator.active {
+  padding: 0.05rem 0.5rem;
 }
 
 .account {
@@ -361,16 +363,18 @@ nav {
   left: var(--sizer-1);
 }
 
-.btn--left svg {
+.btn--left img {
   margin-right: 4px;
+  pointer-events: none;
 }
 
 .btn--right {
   right: var(--sizer-1);
 }
 
-.btn--right svg {
+.btn--right img {
   margin-left: 4px;
+  pointer-events: none;
 }
 
 .slider {
