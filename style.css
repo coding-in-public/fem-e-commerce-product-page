@@ -353,7 +353,7 @@ nav {
   background-color: var(--bkg);
   height: var(--sizer-3);
   width: var(--sizer-3);
-  aspect-ratio: 1/1;
+  /* aspect-ratio: 1/1; */
   border-radius: 50%;
   display: grid;
   place-items: center;
