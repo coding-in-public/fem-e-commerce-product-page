@@ -75,13 +75,17 @@ function handleAmtBtnClick(e){
     amt++;
   }
   qty.textContent = amt;
+  const amtDecreaseBtn = document.querySelector('#amt--decrease');
   if(amt === 0){
-    e.currentTarget.setAttribute('disabled', 'true');
+    amtDecreaseBtn.setAttribute('disabled', 'true');
+    amtDecreaseBtn.classList.remove('accent');
+    amtDecreaseBtn.classList.add('alt-bkg2');
   } else {
-    e.currentTarget.removeAttribute('disabled');
+    amtDecreaseBtn.removeAttribute('disabled');
+    amtDecreaseBtn.classList.remove('alt-bkg2');
+    amtDecreaseBtn.classList.add('accent');
   }
 }
-//TODO: FIGURE OUT REMOVING DISABLED
 
 amtBtns.forEach(b => b.addEventListener('click', handleAmtBtnClick));
 
