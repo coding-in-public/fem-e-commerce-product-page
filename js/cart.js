@@ -8,6 +8,7 @@ const trashBtn = document.querySelector('#trash');
 const cartBody = document.querySelector('#cart__body');
 const checkoutBtn = document.querySelector('#checkout');
 const cartIndicator = document.querySelector('#cartIndicator');
+let total = 0;
 let amt = 0;
 
 const checkoutState = {
@@ -59,14 +60,16 @@ function updateCartState(){
     cartIndicator.textContent = null;
     cartIndicator.classList.remove('active');
   } else {
+    total += amt;
     cartBody.innerHTML = checkoutState.items;
     const PRICE = 125;
     const productAmt = document.querySelector('#amt');
     const productTotal = document.querySelector('#total');
-    productAmt.textContent = amt;
-    cartIndicator.textContent = amt;
+    productAmt.textContent = total;
+    cartIndicator.textContent = total;
     cartIndicator.classList.add('active');
-    productTotal.textContent = `$${amt * PRICE}.00`;
+    productTotal.textContent = `$${total * PRICE}.00`;
+    document.querySelector('.cart__body--btn').textContent = `Checkout (${`$${total * PRICE}.00`})`;
     generateToast(`${amt} added to cart`)
   }
 }
@@ -95,7 +98,7 @@ amtBtns.forEach(b => b.addEventListener('click', handleAmtBtnClick));
 cartBtn.addEventListener('click', toggleCart);
 
 checkoutBtn.addEventListener('click', () => {
-  amt = Number(qty.textContent);
+  amt = +qty.textContent;
   updateCartState();
 });
 
@@ -103,13 +106,20 @@ cartPanel.addEventListener('click', (e) => {
   e.currentTarget === e.target && toggleCart();
   if(e.target === document.querySelector('#trash')){
     amt = 0;
+    total = 0;
     updateCartState();
     generateToast('Items removed from cart.')
   }
 });
 
-/* // TODO:
+/* 
+  TODO:
   - Decouple cart indicator from checkout btn
   - Break out utils into separate file
   - Add custom event listeners for toast, cart indicator, and cart panel, etc.?
+  - additions: add increment/decrement buttons to cart
+  - store total amount in local storage? 
+  - fix weird SVG for delete button
+  - larger targets for all UI buttons?
+  - add cart indicator to add to cart btn?
 */

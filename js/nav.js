@@ -11,3 +11,8 @@ openMenuBtn.addEventListener('click', toggleMenu);
 navPanelContainer.addEventListener('click', (e) => {
   e.currentTarget === e.target && toggleMenu();
 })
+
+/*
+  TODO: 
+    - fix tabbing for desktop nav
+*/
