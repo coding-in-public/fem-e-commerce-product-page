@@ -1,3 +1,5 @@
+import generateToast from './toast.js';
+
 const amtBtns = document.querySelectorAll('.amt');
 const qty = document.querySelector('#qty');
 const cartPanel = document.querySelector('#cartPanel');
@@ -65,6 +67,7 @@ function updateCartState(){
     cartIndicator.textContent = amt;
     cartIndicator.classList.add('active');
     productTotal.textContent = `$${amt * PRICE}.00`;
+    generateToast(`${amt} added to cart`)
   }
 }
 
@@ -101,5 +104,12 @@ cartPanel.addEventListener('click', (e) => {
   if(e.target === document.querySelector('#trash')){
     amt = 0;
     updateCartState();
+    generateToast('Items removed from cart.')
   }
 });
+
+/* // TODO:
+  - Decouple cart indicator from checkout btn
+  - Break out utils into separate file
+  - Add custom event listeners for toast, cart indicator, and cart panel, etc.?
+*/
